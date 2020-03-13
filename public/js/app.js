@@ -10,7 +10,7 @@ weatherForm.addEventListener('submit', event => {
     msgOne.innerHTML = 'Please wait to fetch weather...';
     msgTwo.innerHTML = '';
     let location = search.value;
-    fetch('http://127.0.0.1:3000/weather?address='+ location).then(response => {
+    fetch('/weather?address='+ location).then(response => {
         response.json().then(data => {
             if (data.error) {
                 msgOne.innerHTML = data.error;
